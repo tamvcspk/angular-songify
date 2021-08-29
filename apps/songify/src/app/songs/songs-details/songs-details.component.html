@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <span *ngIf="songTitle; else elseBlock">{{songTitle}}</span>
+      <ng-template #elseBlock>
+        Select Song
+      </ng-template>
+    </mat-card-title>
+  </mat-card-header>
+  <form (ngSubmit)="saved.emit(currentSong)" #form="ngForm">
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Title" [(ngModel)]="currentSong.title" type="text" name="title" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Description" [(ngModel)]="currentSong.description" type="text" name="description">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button [disabled]="form.invalid" color="primary" type="submit">Save</button>
+      <button mat-button (click)="form.reset(); cancel.emit()">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@angular-songify/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@angular-songify/core-data": ["libs/core-data/src/index.ts"],
+      "@angular-songify/core-state": ["libs/core-state/src/index.ts"],
+      "@angular-songify/material": ["libs/material/src/index.ts"],
+      "@angular-songify/ui-toolbar": ["libs/ui-toolbar/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

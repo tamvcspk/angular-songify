@@ -1,0 +1,28 @@
+<angular-songify-toolbar (sidenav)="sidenav.toggle()"></angular-songify-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened class="app-sidenav">
+    <ng-container>
+      <span class="logo">
+        <a [routerLink]="['/']"><img src="assets/note.png" alt="Logo"></a>
+      </span>
+      <mat-divider>
+      </mat-divider>
+      <mat-nav-list data-cy="nav-list">
+        <mat-list-item *ngFor="let link of links" [routerLink]="link.path" routerLinkActive="active"
+          attr.data-cy="nav-item-{{link.title}}">
+          <mat-icon matListIcon>{{link.icon}}</mat-icon>
+          {{link.title | uppercase}}
+        </mat-list-item>
+      </mat-nav-list>
+    </ng-container>
+
+  </mat-sidenav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+    <br>
+    <section class="banners">
+      <div *ngFor="let index of bannersIndex"><img [src]="'assets/banner' + index + '.jpg'" alt="banner"></div>
+    </section>
+  </div>
+</mat-sidenav-container>

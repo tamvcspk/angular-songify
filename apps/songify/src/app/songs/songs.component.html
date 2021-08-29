@@ -1,0 +1,10 @@
+<div class="component-container">
+  <div class="list-component">
+    <angular-songify-song-list [songs]="songs$|async" (selected)="selectSong($event)" (deleted)="deleteSong($event)">
+    </angular-songify-song-list>
+  </div>
+  <div class="details-component">
+    <angular-songify-songs-details [song]="selectedSong" (cancel)="resetSongDetails()" (saved)="saveSong($event)">
+    </angular-songify-songs-details>
+  </div>
+</div>
